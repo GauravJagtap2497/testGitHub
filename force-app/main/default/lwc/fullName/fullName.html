@@ -1,0 +1,20 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-06-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="my full Name">
+        <div class="slds-p-around_medium">
+<lightning-input label="first name" value={firstName} onchange={firstNameChange}></lightning-input>
+<lightning-input label="last name" value={lastName} onchange={lastNameChange}></lightning-input>
+       
+        <template if:true={fullName}>
+            <p class="slds-m-top_medium">your name is {fullName}</p>
+        </template>
+    </div>
+    </lightning-card>
+    
+</template>

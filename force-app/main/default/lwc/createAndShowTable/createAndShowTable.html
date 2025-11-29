@@ -1,0 +1,29 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-09-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Contact with table">
+        <div class="slds-p-round-medium">
+<lightning-input lable="First Name" value={firstName} onchange={firstChange}></lightning-input>
+<lightning-input label="Last Name" value={lastName} onchange={lastChange}></lightning-input>
+
+<lightning-button label="Save" variant="submit" onclick={onSave}></lightning-button>
+</div>
+<template if:true={contacts}>
+<lightning-datatable 
+key-field="Id"
+columns={columns}
+data={contacts}
+hide-checkbox-column="true"
+>
+</lightning-datatable>
+</template>
+ 
+ </lightning-card>
+
+    
+</template>

@@ -1,0 +1,40 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" 
+	controller="AccountListController">
+   <aura:attribute type="Account[]" name="acctList"/>
+   <aura:attribute type="Contact[]" name="conList"/>
+     <aura:attribute name="SelectedAccount" type="String"/>
+   <aura:attribute name="searchKeyword" type="String" />
+   <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+   <div class="slds-box slds-theme_default">
+     <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+<thead>
+   <tr class="slds-text-title_caps">
+      <th scope="col"></th>
+      <th scope="col">Persona</th>
+   </tr>
+</thead>
+<tbody>
+   <aura:iteration items="{!v.acctList}"  var="acc">
+      <tr scope="row">
+         <td>    <input type="checkbox" name="chk" id="{!acc.Id}" onchange="{!c.getSelectedAccount}"/></td>
+         <td>{!acc.Name}</td>
+      </tr>
+   </aura:iteration>
+</tbody>
+</table>
+<table class="slds-table slds-table_bordered slds-table_cell-buffer">
+<thead>
+   <tr class="slds-text-title_caps">
+      <th scope="col">Contact</th>
+   </tr>
+</thead>
+<tbody>
+   <aura:iteration items="{!v.conList}"  var="con">
+      <tr scope="row">
+         <td>{!con.Name}</td>
+      </tr>
+   </aura:iteration>
+</tbody>
+</table>
+        </div>
+</aura:component>

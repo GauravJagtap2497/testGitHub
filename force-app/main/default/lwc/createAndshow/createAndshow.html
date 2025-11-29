@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-08-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="createAndShow">
+        <div class="slds-p-around_medium">
+<lightning-input label="First Name" value={firstName} onchange={firstchange}></lightning-input>
+<lightning-input label="Last Name" value={lastName} onchange={lastchange}></lightning-input>
+<lightning-button label="save" variant="submit" onclick={onSave}></lightning-button>
+</div>
+<template if:true={contacts}>
+<template for:each={contacts} for:item="contact">
+<p key={contact.Id}> {contact.FirstName} {contact.LastName}</p>
+</template>
+
+</template>
+
+    </lightning-card>
+    
+</template>

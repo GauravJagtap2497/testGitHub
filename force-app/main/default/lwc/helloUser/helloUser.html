@@ -1,0 +1,17 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-05-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="helloUser">
+        <div class="slds-p-around_medium">
+<lightning-input label="Enter your Name" value={name} onchange={handleonchange}></lightning-input>
+</div>
+<template if:true={name}>
+<p class="slds-m-top_medium">your name is {name}</p>   
+</template>
+ </lightning-card>
+</template>

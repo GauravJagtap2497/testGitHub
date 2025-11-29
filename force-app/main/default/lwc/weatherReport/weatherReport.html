@@ -1,0 +1,34 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-15-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Todays Weather">
+<div class=''>
+<lightning-input label="City Name" value={cityName} onchange={cityNameChange}></lightning-input>
+<lightning-button label="Weather check" variant="submit" onclick={getWeather}></lightning-button>
+</div>
+<template if:true={WeatherResponse}>
+<p> {WeatherResponse.Description}</p>
+<p>{WeatherResponse.Temprature}</p>
+<p>{WeatherResponse.Humidity}</p>
+
+
+
+
+</template>
+
+
+
+
+
+
+
+
+
+    </lightning-card>
+    
+</template>

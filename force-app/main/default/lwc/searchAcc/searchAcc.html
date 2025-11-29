@@ -1,0 +1,43 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 01-30-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card  variant="Narrow"  title="Account Search" icon-name="standard:account">
+      
+      <lightning-input  label="Search Account" type="text"  onchange={handleInputChange}></lightning-input>  
+       
+      <template if:true={accounts.data}>
+        <template for:each={accounts.data} for:item="acc">
+            <lightning-layout vertical-align="center" key={acc.id}>
+                <table >
+                              
+                    <tr>
+                        <td>{acc.Name}</td>
+                        <td>{acc.phone} </td>
+                        <td>{acc.website}</td>
+                        <td>{acc.industry}</td> 
+                    </tr>
+                </table>
+                
+            </lightning-layout>
+        </template>
+    </template>
+    <div style="height: 300px;">
+        <lightning-datatable
+                key-field="id"
+                data={accounts.data}
+                
+                show-row-number-column
+                row-number-offset={rowOffset}
+                suppress-bottom-bar
+                draft-values={draftValues}
+                columns={columns}>
+        </lightning-datatable>
+       
+    </div>
+    </lightning-card>
+</template>

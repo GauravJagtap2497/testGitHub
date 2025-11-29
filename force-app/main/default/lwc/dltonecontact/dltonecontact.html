@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-25-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="delete letest contact">
+       
+
+<template if:true={contacts}>
+    <p><strong>Id:</strong> {contacts.Id}</p>
+    <p><strong>Name:</strong> {contacts.Name}</p>
+</template>
+
+<lightning-button label="delete" variant="delete" onclick={deletecontact}></lightning-button>
+<template if:true={massage}>
+    contct has been deletted successfully
+</template>
+<template if:true={errormassgae}>
+    there is error while deleting contact
+</template>
+</lightning-card>
+    
+</template>

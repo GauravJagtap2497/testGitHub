@@ -1,0 +1,20 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-07-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="List Of Contact">
+        <div class="slds-p-around_medium">
+<template if:true={contacts}>
+    <template for:each={contacts} for:item="contact">
+        <p key={contact.Id}>{contact.FirstName}{contact.LastName}</p>
+ </template>
+</template>
+        </div>
+
+    </lightning-card>
+    
+</template>

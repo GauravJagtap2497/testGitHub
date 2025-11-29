@@ -1,0 +1,50 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-03-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Contact List with Bulk Delete" icon-name="standard:contact">
+        <template if:true={contact}>
+            <lightning-button 
+                label="Delete Selected" 
+                onclick={handleDeleteSelected} 
+                class="slds-m-bottom_small"
+                variant="destructive">
+            </lightning-button>
+
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={contact} for:item="contact">
+                        <tr key={contact.Id}>
+                            <td>
+                                <lightning-input 
+                                    type="checkbox" 
+                                    data-id={contact.Id}
+                                    onchange={handleCheckboxChange}>
+                                </lightning-input>
+                            </td>
+                            <td>{contact.FirstName}</td>
+                            <td>{contact.LastName}</td>
+                            <td>{contact.Email}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error slds-p-around_medium">Error: {error}</p>
+        </template>
+    </lightning-card>
+</template>

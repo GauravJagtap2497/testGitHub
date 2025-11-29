@@ -1,0 +1,40 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 06-03-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="dltRowContact">
+<template if:true={contact}></template>
+<table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+  <thead>
+    <tr>
+    <th>First Name</th>
+    <th>last Name</th>
+    <th>Email</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <template for:each={contact} for:item="contact">
+<tr key={contact.Id}>
+  <td>{contact.FirstName}</td>
+  <td>{contact.LastName}</td>
+  <td>{contact.Email}</td>
+  <td>
+<lightning-button
+label="Delete"
+variant="destructive"
+data-id={contact.Id}
+onclick={handledelete}
+></lightning-button>
+ </td>
+</tr>
+</template>
+  </tbody>
+</table>
+</lightning-card>
+    
+</template>

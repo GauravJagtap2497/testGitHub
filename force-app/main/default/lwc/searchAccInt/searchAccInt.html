@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 05-11-2025
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title='Fetch From DEVGJ'>
+
+<lightning-input label='Account Search' value={NameSearch} onchange={onNameChange}></lightning-input>
+<template if:true={Accounts}>
+<lightning-datatable
+key-field="Id"
+columns={columns}
+data={Accounts}
+></lightning-datatable>
+</template>
+
+    </lightning-card>
+</template>
